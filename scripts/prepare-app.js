@@ -23,6 +23,8 @@ fs.cpSync(path.join(upstream, sample), app, { recursive: true });
 fs.symlinkSync(path.join(root, 'node_modules'), path.join(app, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
 fs.copyFileSync(path.join(root, 'package.json'), path.join(app, 'package.json'));
 fs.writeFileSync(path.join(app, 'babel.config.json'), JSON.stringify({ presets: ['module:@react-native/babel-preset'] }));
+const metro = path.join(app, 'metro.config.js');
+fs.appendFileSync(metro, "\nmodule.exports.watchFolders = [require('node:path').resolve(__dirname, '../node_modules')];\n");
 const build = path.join(app, 'android/build.gradle');
 const original = fs.readFileSync(build, 'utf8');
 const expected = "apply from: '../../../detox/android/rninfo.gradle'";
