@@ -1,0 +1,8 @@
+.env
+node_modules/
+.upstream/
+.app/
+results/
+__pycache__/
+*.log
+*.apk

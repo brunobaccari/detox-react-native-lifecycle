@@ -1,0 +1,21 @@
+{
+  "name": "detox-react-native-lifecycle",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare:app": "node scripts/prepare-app.js",
+    "build:android": "detox build --configuration android.attached.release",
+    "test:android": "detox test --configuration android.attached.release"
+  },
+  "dependencies": {"react": "19.2.3", "react-native": "0.85.2"},
+  "devDependencies": {
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native/babel-preset": "0.85.2",
+    "@react-native/metro-config": "0.85.2",
+    "detox": "20.51.4",
+    "dotenv": "17.2.3",
+    "jest": "29.7.0",
+    "jest-junit": "16.0.0"
+  }
+}
