@@ -2,7 +2,7 @@ require('dotenv').config({ quiet: true });
 
 module.exports = {
   testRunner: { args: { $0: 'jest', config: 'e2e/jest.config.js' }, jest: { setupTimeout: 120000 } },
-  artifacts: { rootDir: 'results/detox', plugins: { screenshot: 'failing', log: 'failing' } },
+  artifacts: { rootDir: 'results/detox', plugins: { screenshot: { shouldTakeAutomaticSnapshots: true, keepOnlyFailedTestsArtifacts: false, takeWhen: { testStart: false, testDone: true } }, log: 'failing' } },
   apps: {
     release: {
       type: 'android.apk',
