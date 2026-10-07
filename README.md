@@ -31,3 +31,5 @@ Configure `ANDROID_DEVICE` conforme `adb devices`. O prepare obtém um commit ex
 [Actions](https://github.com/brunobaccari/detox-react-native-lifecycle/actions) compila o app e a instrumentação antes do emulador. O summary mostra cada caso; o artifact `android-results` contém JUnit, resumo por cenário com duração, screenshots ao final de cada teste e logs de falhas do Detox por 14 dias. Cinco casos executados e aprovados são obrigatórios; relatório vazio, falha ou skip reprova.
 
 Nenhuma integração de produção, persistência durável ou cobertura iOS foi validada. O próprio aplicativo de exemplo é propositalmente limitado; o portfólio demonstra o mecanismo e a distinção entre estados do ciclo de vida. Dependências de build de terceiros têm ciclo de atualização separado.
+
+Husky: com Node 24 e as dependências da stack instalados, rode `npm ci` para ativar o pre-commit. `npm run check:local` verifica o diff, o gate dos relatórios e os checks de tipos/lint existentes. O hook também bloqueia arquivos ignorados no índice. Testes que usam navegador, emulador ou API continuam no CI.

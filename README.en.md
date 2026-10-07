@@ -31,3 +31,5 @@ Set `ANDROID_DEVICE` from `adb devices`. Preparation checks out an exact upstrea
 [Actions](https://github.com/brunobaccari/detox-react-native-lifecycle/actions) builds both APKs before starting the emulator. The summary lists each case; `android-results` retains JUnit, per-scenario summary with duration, screenshots at the end of every test and Detox failure logs for 14 days. All five cases must execute and pass; an empty report, failure or skip fails the gate.
 
 No production integration, durable persistence or iOS execution is claimed. The official sample is intentionally small; this portfolio demonstrates lifecycle semantics and framework operation. Third-party build dependencies have their own update cycle.
+
+Husky: with Node 24 and the stack dependencies installed, run `npm ci` to enable pre-commit. `npm run check:local` checks the diff, report gate and existing type/lint checks. The hook also rejects ignored files in the index. Browser, emulator and API tests remain in CI.
